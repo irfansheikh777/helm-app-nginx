@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm-app-nginx-v2
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://controlplane:6443
+  project: default
+  source:
+    path: nginx
+    repoURL: https://github.com/irfansheikh777/helm-app-nginx.git
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
