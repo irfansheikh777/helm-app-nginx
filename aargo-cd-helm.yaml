@@ -6,7 +6,7 @@ metadata:
 spec:
   destination:
     namespace: default
-    server: https://controlplane:6443
+    server: https://kubernetes.default.svc 
   project: default
   source:
     path: nginx
